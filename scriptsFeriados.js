@@ -1,32 +1,11 @@
-// index mes
-var indexMes = 0
-
-// index dia
-var indexDia = 0
-
-// A cada dois index é um mês
-var mes = document.querySelectorAll("[class='list-holidays']")[indexMes]
-
-// dia
-mes.children[indexDia].children[0].children[0].innerHTML
-
-// title
-mes.children[indexDia].children[1].children[0].innerHTML
-
-// link
-mes.children[indexDia].children[1].children[0].href
-
-// feriado ou ponto facultativo
-mes.children[indexDia].children[1].children[1].innerHTML
-
-
-
-
 // Index do mês
 var indexMes = 0;
 
 // Seleciona o mês
 var mes = document.querySelectorAll("[class='list-holidays']")[indexMes];
+
+// String para armazenar o resultado
+var resultado = "";
 
 // Laço de repetição para iterar sobre os dias
 for (var indexDia = 0; indexDia < mes.children.length; indexDia++) {
@@ -39,7 +18,18 @@ for (var indexDia = 0; indexDia < mes.children.length; indexDia++) {
     var feriadoElement = mes.children[indexDia].children[1].children[1];
     var feriado = feriadoElement ? feriadoElement.innerHTML : 'undefined';
 
-    // Exibe no console as informações no formato desejado
-    console.log(`${dia}/01/2024 - ${titulo} - ${link} - ${feriado}`);
+    // Adiciona as informações ao resultado
+    resultado += `${dia}/01/2024\t${titulo}\t${link}\t${feriado}\n`;
 }
 
+// Função para criar um blob e baixar o arquivo .txt
+function downloadTxtFile(content, filename) {
+    var blob = new Blob([content], { type: 'text/plain' });
+    var link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+}
+
+// Chama a função para baixar o arquivo
+downloadTxtFile(resultado, 'feriados.txt');
