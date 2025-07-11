@@ -9,8 +9,7 @@ O script percorre os elementos HTML de uma página contendo a lista de feriados,
 - **Data** no formato `DD/MM/AAAA` (com o mês formatado com dois dígitos)
 - **Título** do feriado (ex: "Dia do Trabalhador")
 - **Link** para a página relacionada ao feriado (se disponível)
-- **Descrição do Feriado** (se disponível, caso contrário é mostrado "undefined")
 
 ## Link do site
 
-- https://www.calendarr.com/brasil/datas-comemorativas-2024/
+- https://www.calendarr.com/brasil/datas-comemorativas-2025/

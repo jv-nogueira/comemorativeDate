@@ -1,0 +1,13 @@
+{
+  "name": "Extrator de feriados",
+  "description": "https://www.calendarr.com/",
+  "manifest_version": 3,
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html"
+  },
+    "icons": { 
+        "48": "icons/bell.png"
+},
+  "permissions": ["activeTab", "scripting"]
+}
