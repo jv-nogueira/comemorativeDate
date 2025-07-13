@@ -1,5 +1,6 @@
 document.getElementById("executar").addEventListener("click", async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    window.close();
 
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
